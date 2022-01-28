@@ -30,7 +30,7 @@ def pip_install(
     # lot of packages.
     args = ["install", "--disable-pip-version-check", "--prefix", str(environment.path)]
 
-    if not is_wheel:
+    if not (is_wheel or editable):
         args.insert(1, "--use-pep517")
 
     if upgrade:
